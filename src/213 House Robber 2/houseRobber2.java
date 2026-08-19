@@ -6,14 +6,13 @@ class houseRobber2 {
         int rob1 = amount(arr, 0, n-2);
         int rob2 = amount(arr, 1, n-1);
         return Math.max(rob1, rob2);
-    }
+    } 
     public int amount(int[]arr, int i, int j){
         int n = arr.length;
         if(i > j) return 0;
         int take = arr[i] + amount(arr, i+2, j);
         int skip = amount(arr, i+1, j);
-        int ans = Math.max(take, skip);
-        return ans;
+        return Math.max(take, skip);
     }
 
     // RECURSION + MEMOIZATION
